@@ -1,0 +1,100 @@
+{
+  "name": "gatsby-starter-ecommerce",
+  "description": "Gatsby starter ecommerce",
+  "version": "2.0.0",
+  "author": "Parminder Sanghera",
+  "bugs": {
+    "url": "https://github.com/parmsang/gatsby-starter-ecommerce"
+  },
+  "dependencies": {
+    "@moltin/gatsby-source-moltin": "^1.9.1",
+    "@moltin/sdk": "^3.24.1",
+    "eslint-plugin-jest": "^22.21.0",
+    "gatsby": "^2.29.3",
+    "gatsby-cli": "^2.16.2",
+    "gatsby-image": "^2.8.0",
+    "gatsby-plugin-google-analytics": "^2.8.0",
+    "gatsby-plugin-manifest": "^2.9.1",
+    "gatsby-plugin-nprogress": "^2.7.0",
+    "gatsby-plugin-offline": "^3.7.1",
+    "gatsby-plugin-react-helmet": "^3.7.0",
+    "gatsby-plugin-sharp": "^2.11.2",
+    "gatsby-plugin-styled-components": "^3.7.0",
+    "gatsby-source-filesystem": "^2.8.1",
+    "gatsby-transformer-sharp": "^2.9.0",
+    "is-ci-cli": "^1.1.1",
+    "lodash": "^4.17.20",
+    "react": "^16.14.0",
+    "react-dom": "^16.14.0",
+    "react-headroom": "^2.2.8",
+    "react-helmet": "^6.1.0",
+    "react-stripe-checkout": "^2.6.3",
+    "semantic-ui-css": "^2.4.1",
+    "semantic-ui-react": "^0.88.2",
+    "styled-components": "^4.4.1"
+  },
+  "devDependencies": {
+    "@testing-library/cypress": "^5.3.1",
+    "@testing-library/jest-dom": "^5.11.8",
+    "@testing-library/react": "^9.5.0",
+    "babel-eslint": "^10.1.0",
+    "babel-jest": "^24.9.0",
+    "babel-plugin-styled-components": "^1.12.0",
+    "babel-preset-gatsby": "^0.9.1",
+    "cross-env": "^5.2.1",
+    "cypress": "^3.8.3",
+    "dotenv": "^8.2.0",
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb": "^18.2.1",
+    "eslint-config-prettier": "^6.15.0",
+    "eslint-loader": "^3.0.4",
+    "eslint-plugin-cypress": "^2.11.2",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-prettier": "^3.3.0",
+    "eslint-plugin-react": "^7.22.0",
+    "gatsby-cypress": "^0.2.24",
+    "gh-pages": "^2.2.0",
+    "husky": "^3.1.0",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^24.9.0",
+    "lint-staged": "^9.5.0",
+    "prettier": "^1.19.1",
+    "regenerator-runtime": "^0.13.7",
+    "rimraf": "^3.0.2",
+    "start-server-and-test": "^1.11.7"
+  },
+  "homepage": "https://github.com/parmsang/gatsby-starter-ecommerce",
+  "keywords": [
+    "gatsby"
+  ],
+  "license": "MIT",
+  "main": "n/a",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/parmsang/gatsby-starter-ecommerce.git"
+  },
+  "scripts": {
+    "start": "rimraf .cache && gatsby develop",
+    "dev": "gatsby develop",
+    "lint": "eslint . --ext .js,.jsx --ignore-path .gitignore",
+    "lint:fix": "eslint . --ext .js,.jsx --fix --ignore-path .gitignore",
+    "format": "prettier --write \"src/**/*.{js,jsx}\"",
+    "develop": "rimraf .cache && gatsby develop",
+    "build": "rimraf .cache && gatsby build",
+    "deploy": "rimraf .cache && gatsby build --prefix-paths && gh-pages -d public",
+    "cy:open": "cypress open",
+    "test": "is-ci \"test:coverage\" \"test:watch\"",
+    "test:coverage": "jest --coverage",
+    "test:watch": "jest --watch",
+    "test:debug": "node --inspect-brk ./node_modules/jest/bin/jest.js --runInBand --watch",
+    "cy:run": "cypress run",
+    "test:e2e:dev": "cross-env CYPRESS_SUPPORT=y start-server-and-test dev http://localhost:8000 cy:open",
+    "test:e2e:run": "cross-env CYPRESS_SUPPORT=y start-server-and-test develop http://localhost:8000 cy:run"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  }
+}
