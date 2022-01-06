@@ -47,17 +47,6 @@ const StoreIndex = ({location}) => {
   const siteTitle = get(data, 'site.siteMetadata.title')
   const products = get(data, 'allMoltinProduct.edges')
   const filterProductsWithoutImages = products.filter(v => v.node.mainImageHref)
-  const firstProduct = filterProductsWithoutImages[0]
-  firstProduct.node.mainImage.childImageSharp.sizes.src = '/burke-lamp.png'
-  firstProduct.node.mainImage.childImageSharp.sizes.base64 = ''
-  firstProduct.node.mainImage.childImageSharp.sizes.srcSet = ''
-  firstProduct.node.name = 'Burke'
-  const secondProduct = filterProductsWithoutImages[1]
-  secondProduct.node.mainImage.childImageSharp.sizes.src = '/burke-lamp2.png'
-  secondProduct.node.mainImage.childImageSharp.sizes.base64 = ''
-  secondProduct.node.mainImage.childImageSharp.sizes.srcSet = ''
-  secondProduct.node.name = 'Holland'
-  console.log(JSON.stringify(firstProduct, null, 2))
   return (
     <Layout location={location}>
       <SEO title={siteTitle} />
